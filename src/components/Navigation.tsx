@@ -1,9 +1,18 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -14,86 +23,85 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-orange-200/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled ? 'bg-white/95 backdrop-blur-sm border-b border-slate-200/30' : 'bg-transparent'
+    }`}>
+      <div className="max-w-7xl mx-auto px-8 lg:px-12">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0">
-            <h1 className="text-3xl font-black text-orange-600 tracking-tight">
+            <h1 className="text-2xl font-light text-slate-900 tracking-wide">
               LUMINA
             </h1>
           </div>
           
-          {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="flex items-center space-x-12">
               <button
                 onClick={() => scrollToSection('home')}
-                className="text-gray-900 hover:text-orange-600 transition-colors duration-300 font-medium text-lg relative group"
+                className="text-slate-700 hover:text-indigo-900 transition-colors duration-300 font-light text-sm tracking-wide uppercase relative group"
               >
-                HOME
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
+                Home
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-copper transition-all duration-300 group-hover:w-full"></span>
               </button>
               <button
                 onClick={() => scrollToSection('services')}
-                className="text-gray-900 hover:text-orange-600 transition-colors duration-300 font-medium text-lg relative group"
+                className="text-slate-700 hover:text-indigo-900 transition-colors duration-300 font-light text-sm tracking-wide uppercase relative group"
               >
-                SERVICES
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
+                Services
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-copper transition-all duration-300 group-hover:w-full"></span>
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className="text-gray-900 hover:text-orange-600 transition-colors duration-300 font-medium text-lg relative group"
+                className="text-slate-700 hover:text-indigo-900 transition-colors duration-300 font-light text-sm tracking-wide uppercase relative group"
               >
-                ABOUT
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
+                About
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-copper transition-all duration-300 group-hover:w-full"></span>
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="bg-orange-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-700 transition-all duration-300 transform hover:scale-105"
+                className="border border-slate-300 text-slate-700 hover:bg-indigo-900 hover:text-white hover:border-indigo-900 px-6 py-2 font-light text-sm tracking-wide uppercase transition-all duration-300"
               >
-                CONTACT
+                Contact
               </button>
             </div>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-900 hover:text-orange-600 transition-colors duration-200"
+              className="text-slate-700 hover:text-indigo-900 transition-colors duration-200"
             >
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-4 pt-4 pb-6 space-y-4 bg-white/95 border-t border-orange-200/30">
+            <div className="px-4 pt-4 pb-6 space-y-4 bg-white border-t border-slate-200">
               <button
                 onClick={() => scrollToSection('home')}
-                className="block w-full text-left px-4 py-3 text-gray-900 hover:text-orange-600 transition-colors duration-200 font-medium text-lg"
+                className="block w-full text-left px-4 py-3 text-slate-700 hover:text-indigo-900 transition-colors duration-200 font-light text-sm tracking-wide uppercase"
               >
-                HOME
+                Home
               </button>
               <button
                 onClick={() => scrollToSection('services')}
-                className="block w-full text-left px-4 py-3 text-gray-900 hover:text-orange-600 transition-colors duration-200 font-medium text-lg"
+                className="block w-full text-left px-4 py-3 text-slate-700 hover:text-indigo-900 transition-colors duration-200 font-light text-sm tracking-wide uppercase"
               >
-                SERVICES
+                Services
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className="block w-full text-left px-4 py-3 text-gray-900 hover:text-orange-600 transition-colors duration-200 font-medium text-lg"
+                className="block w-full text-left px-4 py-3 text-slate-700 hover:text-indigo-900 transition-colors duration-200 font-light text-sm tracking-wide uppercase"
               >
-                ABOUT
+                About
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="block w-full text-left px-4 py-3 bg-orange-600 text-white rounded-lg font-semibold"
+                className="block w-full text-left px-4 py-3 border border-slate-300 text-slate-700 font-light text-sm tracking-wide uppercase"
               >
-                CONTACT
+                Contact
               </button>
             </div>
           </div>

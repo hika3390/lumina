@@ -11,13 +11,13 @@ const Index = () => {
     <div className="font-noto bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 min-h-screen">
       <Navigation />
       <HeroSection />
-      <div className="bg-white/60 backdrop-blur-sm">
+      <div className="bg-white/70">
         <ServicesSection />
       </div>
-      <div className="bg-slate-50/80 backdrop-blur-sm">
+      <div className="bg-slate-50/80">
         <AboutSection />
       </div>
-      <div className="bg-white/60 backdrop-blur-sm">
+      <div className="bg-white/70">
         <ContactSection />
       </div>
       <Footer />

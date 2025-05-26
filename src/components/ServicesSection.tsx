@@ -1,5 +1,5 @@
 
-import { Code, Database, Cloud, Shield, PencilRuler } from 'lucide-react';
+import { Code, Cloud, Shield, PencilRuler } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 const ServicesSection = () => {

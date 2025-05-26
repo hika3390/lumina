@@ -72,7 +72,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <h2 className="text-4xl sm:text-5xl font-light text-slate-900 mb-8 tracking-tight leading-tight">
-              About
+              Concept
             </h2>
             <div className="w-24 h-px bg-copper mb-8"></div>
             <p className="text-lg text-slate-600 leading-relaxed mb-8 font-light">

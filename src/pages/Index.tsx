@@ -8,18 +8,12 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="font-noto bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 min-h-screen">
+    <div className="font-sans bg-gradient-to-br from-orange-50 via-yellow-50 to-orange-100 min-h-screen">
       <Navigation />
       <HeroSection />
-      <div className="bg-white/70">
-        <ServicesSection />
-      </div>
-      <div className="bg-slate-50/80">
-        <AboutSection />
-      </div>
-      <div className="bg-white/70">
-        <ContactSection />
-      </div>
+      <ServicesSection />
+      <AboutSection />
+      <ContactSection />
       <Footer />
     </div>
   );

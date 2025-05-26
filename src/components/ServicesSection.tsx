@@ -4,63 +4,74 @@ import { Code, Database, Cloud, Shield, Smartphone, Cog } from 'lucide-react';
 const ServicesSection = () => {
   const services = [
     {
-      icon: <Code className="w-12 h-12 text-blue-600" />,
-      title: "Webアプリケーション開発",
-      description: "最新の技術スタックを使用した高性能で拡張性の高いWebアプリケーションを開発いたします。"
+      icon: <Code className="w-16 h-16 text-orange-600" />,
+      title: "WEB DEVELOPMENT",
+      description: "最新技術スタックによる高性能Webアプリケーション開発"
     },
     {
-      icon: <Database className="w-12 h-12 text-blue-600" />,
-      title: "データベース設計・構築",
-      description: "効率的なデータ管理を実現する最適化されたデータベースシステムの設計・構築を行います。"
+      icon: <Database className="w-16 h-16 text-orange-600" />,
+      title: "DATABASE DESIGN",
+      description: "効率的なデータ管理システムの設計・構築"
     },
     {
-      icon: <Cloud className="w-12 h-12 text-blue-600" />,
-      title: "クラウドインフラ構築",
-      description: "AWS、Azure、GCPなどの主要クラウドプラットフォームでのインフラ設計・構築を支援します。"
+      icon: <Cloud className="w-16 h-16 text-orange-600" />,
+      title: "CLOUD INFRASTRUCTURE",
+      description: "AWS・Azure・GCPによるクラウドインフラ構築"
     },
     {
-      icon: <Shield className="w-12 h-12 text-blue-600" />,
-      title: "セキュリティ対策",
-      description: "企業の重要なデータを守るための包括的なセキュリティソリューションを提供いたします。"
+      icon: <Shield className="w-16 h-16 text-orange-600" />,
+      title: "SECURITY SOLUTIONS",
+      description: "企業データを守る包括的セキュリティソリューション"
     },
     {
-      icon: <Smartphone className="w-12 h-12 text-blue-600" />,
-      title: "モバイルアプリ開発",
-      description: "iOS・Android両対応のネイティブアプリやクロスプラットフォームアプリの開発を行います。"
+      icon: <Smartphone className="w-16 h-16 text-orange-600" />,
+      title: "MOBILE APPS",
+      description: "iOS・Android対応のモバイルアプリケーション開発"
     },
     {
-      icon: <Cog className="w-12 h-12 text-blue-600" />,
-      title: "システム保守・運用",
-      description: "24/7の監視体制で安定したシステム運用をサポートし、継続的な改善を行います。"
+      icon: <Cog className="w-16 h-16 text-orange-600" />,
+      title: "SYSTEM MAINTENANCE",
+      description: "24/7監視体制による安定したシステム運用"
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Services</h2>
-          <h3 className="text-2xl text-gray-700 mb-6">サービス一覧</h3>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            お客様のビジネス課題を解決するための包括的なITソリューションを提供いたします。
+    <section id="services" className="py-32 bg-white relative">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-100 to-yellow-100"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-6xl sm:text-7xl font-black text-gray-900 mb-6 tracking-tight">
+            OUR
+            <br />
+            <span className="text-orange-600">SERVICES</span>
+          </h2>
+          <div className="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
+            ビジネスの成長を支える、革新的なITソリューション
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+              className="group cursor-pointer"
             >
-              <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                {service.icon}
+              <div className="bg-white border border-gray-100 p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 hover:border-orange-200">
+                <div className="mb-8 group-hover:scale-110 transition-transform duration-300">
+                  {service.icon}
+                </div>
+                <h4 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">
+                  {service.title}
+                </h4>
+                <p className="text-gray-600 leading-relaxed font-light text-lg">
+                  {service.description}
+                </p>
               </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-4">
-                {service.title}
-              </h4>
-              <p className="text-gray-600 leading-relaxed">
-                {service.description}
-              </p>
             </div>
           ))}
         </div>

@@ -52,7 +52,7 @@ const AboutSection = () => {
 
   return (
     <section id="about" ref={sectionRef} className="py-32 bg-white relative">
-      <div className="mx-auto px-8 lg:px-12">
+      <div className="mx-auto">
         <div className="gap-24 items-center mb-32">
           
           <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>

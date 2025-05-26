@@ -51,7 +51,24 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" ref={sectionRef} className="py-32 bg-slate-50 relative">
+    <section id="services" ref={sectionRef} className="py-32 bg-white relative">
+
+      <div className="mx-auto">
+        <div className="gap-24 items-center mb-32">
+          
+          <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1693328787350-b72bb34c1627?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="チーム"
+                className="w-full grayscale hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-indigo-900/10 hover:bg-transparent transition-all duration-700"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-8 lg:px-12">
         <div className={`text-center mb-24 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-4xl sm:text-5xl font-light text-slate-900 mb-6 tracking-tight">

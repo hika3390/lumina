@@ -31,41 +31,7 @@ const Navigation = () => {
               LUMINA LLC
             </h1>
           </div>
-
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-slate-700 hover:text-indigo-900 transition-colors duration-200"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
         </div>
-
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-4 pt-4 pb-6 space-y-4 bg-white border-t border-slate-200">
-              <button
-                onClick={() => scrollToSection('home')}
-                className="block w-full text-left px-4 py-3 text-slate-700 hover:text-indigo-900 transition-colors duration-200 font-light text-sm tracking-wide uppercase"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection('services')}
-                className="block w-full text-left px-4 py-3 text-slate-700 hover:text-indigo-900 transition-colors duration-200 font-light text-sm tracking-wide uppercase"
-              >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection('about')}
-                className="block w-full text-left px-4 py-3 text-slate-700 hover:text-indigo-900 transition-colors duration-200 font-light text-sm tracking-wide uppercase"
-              >
-                About
-              </button>
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );

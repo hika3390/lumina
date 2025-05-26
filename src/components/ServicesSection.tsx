@@ -1,5 +1,5 @@
 
-import { Code, Database, Cloud, Shield, Smartphone, Cog } from 'lucide-react';
+import { Code, Database, Cloud, Shield, PencilRuler } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 const ServicesSection = () => {
@@ -34,9 +34,9 @@ const ServicesSection = () => {
       description: "最新技術スタックによる高性能なWebアプリケーションを開発"
     },
     {
-      icon: <Database className="w-8 h-8 text-indigo-900" />,
-      title: "Database Design",
-      description: "効率的で安全なデータ管理システムの設計・構築"
+      icon: <PencilRuler className="w-8 h-8 text-indigo-900" />,
+      title: "Web Design",
+      description: "洗練されたUI/UXデザインの設計"
     },
     {
       icon: <Cloud className="w-8 h-8 text-indigo-900" />,
@@ -48,16 +48,6 @@ const ServicesSection = () => {
       title: "Security Solutions",
       description: "包括的なセキュリティソリューションでデータを保護"
     },
-    {
-      icon: <Smartphone className="w-8 h-8 text-indigo-900" />,
-      title: "Mobile Applications",
-      description: "iOS・Android対応のモバイルアプリケーション開発"
-    },
-    {
-      icon: <Cog className="w-8 h-8 text-indigo-900" />,
-      title: "System Maintenance",
-      description: "24/7体制による安定したシステム運用・保守"
-    }
   ];
 
   return (
@@ -65,12 +55,9 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto px-8 lg:px-12">
         <div className={`text-center mb-24 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-4xl sm:text-5xl font-light text-slate-900 mb-6 tracking-tight">
-            Our <span className="font-normal text-indigo-900">Services</span>
+            Works
           </h2>
           <div className="w-24 h-px bg-copper mx-auto mb-8"></div>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
-            ビジネスの成長を支える、革新的なITソリューション
-          </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">

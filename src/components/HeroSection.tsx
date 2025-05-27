@@ -3,7 +3,11 @@ import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [randomQuote, setRandomQuote] = useState("Less is more .");
+  const [randomQuote, setRandomQuote] = useState("");
+  const [fullQuote, setFullQuote] = useState("");
+  const [typingIndex, setTypingIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+  const [showCursor, setShowCursor] = useState(true);
   
   // ランダムに表示する言葉の配列
   const quotes = [
@@ -21,12 +25,35 @@ const HeroSection = () => {
     "Dressing is a way of life"
   ];
 
+  // タイプライターエフェクトの実装
   useEffect(() => {
     setIsVisible(true);
     // ページ読み込み時にランダムな言葉を選択
     const randomIndex = Math.floor(Math.random() * quotes.length);
-    setRandomQuote(quotes[randomIndex]);
+    const selectedQuote = quotes[randomIndex];
+    setFullQuote(selectedQuote);
+    
+    // カーソル点滅のエフェクト
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500);
+    
+    return () => clearInterval(cursorInterval);
   }, []);
+  
+  // タイピングエフェクト
+  useEffect(() => {
+    if (typingIndex < fullQuote.length) {
+      const typingTimeout = setTimeout(() => {
+        setRandomQuote(prev => prev + fullQuote.charAt(typingIndex));
+        setTypingIndex(prev => prev + 1);
+      }, 20);
+      
+      return () => clearTimeout(typingTimeout);
+    } else {
+      setIsTyping(false);
+    }
+  }, [typingIndex, fullQuote]);
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative bg-white overflow-hidden">
@@ -38,8 +65,9 @@ const HeroSection = () => {
       
       <div className="relative z-10 text-center px-8 lg:px-12 max-w-6xl mx-auto">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h1 className="text-3xl  font-light text-slate-900 mb-5 tracking-tight leading-tight">
+          <h1 className="text-1xl text-slate-900 text-opacity-85 mb-2 tracking-tight leading-tight">
             {randomQuote}
+            <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} ${isTyping ? 'inline-block' : 'hidden'}`}>|</span>
             <br />
           </h1>
           <div className="h-px bg-copper bg-opacity-30 mx-auto mb-12"></div>

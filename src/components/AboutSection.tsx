@@ -68,7 +68,7 @@ const AboutSection = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 lg:px-12">
+      <div className="mx-auto px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <h2 className="text-4xl sm:text-5xl font-light text-slate-900 mb-8 tracking-tight leading-tight">

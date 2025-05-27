@@ -88,7 +88,7 @@ const AboutSection = () => {
           <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1695997956965-aed69fb1cc7c?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://images.unsplash.com/photo-1692432248156-91e5c8cd84d7?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="チーム"
                 className="w-full grayscale-0 hover:grayscale-0 transition-all duration-700"
               />

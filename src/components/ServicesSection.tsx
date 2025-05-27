@@ -86,7 +86,7 @@ const ServicesSection = () => {
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="bg-white p-12 h-full transition-all duration-500 transform hover:-translate-y-2 hover:shadow-lg border border-slate-200/50">
+              <div className="bg-white p-12 h-full transition-all duration-500 transform hover:-translate-y-2 hover:shadow-lg border-slate-200/50">
                 <div className="mb-8 group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
                 </div>

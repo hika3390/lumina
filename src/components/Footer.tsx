@@ -13,7 +13,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text- font-light mb-6 text-slate-900 tracking-wide text-opacity-90">Tokyo Office</h4>
+            <h4 className="text- font-light mb-6 text-slate-900 tracking-wide text-opacity-90">LUMINA Tokyo</h4>
             <div className="space-y-4 text-slate-900 text-opacity-90">
               <div className="flex items-center space-x-4">
                 <Phone className="w-4 h-4 text-black text-opacity-90" />
@@ -23,10 +23,14 @@ const Footer = () => {
                 <Mail className="w-4 h-4 text-black text-opacity-90" />
                 <span className="font-light">info@lmns.jp</span>
               </div>
+              {
+                /*
               <div className="flex items-start space-x-4">
                 <MapPin className="w-4 h-4 text-black text-opacity-90 mt-1" />
                 <span className="font-light">2-5-2 Minamiazabu, Minato-ku, Tokyo, Japan, 106 0047</span>
               </div>
+              */
+              }
             </div>
           </div>
         </div>

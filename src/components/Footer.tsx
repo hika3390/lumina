@@ -23,10 +23,6 @@ const Footer = () => {
                 <Mail className="w-4 h-4 text-black text-opacity-90" />
                 <span className="font-light">info@lmns.jp</span>
               </div>
-              <div className="flex items-start space-x-4">
-                <MapPin className="w-4 h-4 text-black text-opacity-90 mt-1" />
-                <span className="font-light">2-5-2 Minamiazabu, Minato-ku, Tokyo, Japan, 106 0047</span>
-              </div>
             </div>
           </div>
         </div>

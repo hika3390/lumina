@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/:trick(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

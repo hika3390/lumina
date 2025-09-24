@@ -23,7 +23,7 @@ const Footer = () => {
             <h4 className="text- font-light mb-6 text-slate-900 tracking-wide text-opacity-90">LUMINA Tokyo</h4>
             <div className="space-y-4 text-slate-900 text-opacity-90">
               <div className="flex items-center space-x-4">
-                <span className="font-light">106-0047 東京都港区南麻布2丁目5-2-402</span>
+                <span className="font-light">106-0032 東京都港区六本木3丁目16-12 六本木KSビル5階</span>
               </div>
               <div className="flex items-center space-x-4">
                 <Phone className="w-4 h-4 text-black text-opacity-90" />

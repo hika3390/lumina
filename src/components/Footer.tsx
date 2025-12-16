@@ -25,10 +25,10 @@ const Footer = () => {
               <div className="flex items-center space-x-4">
                 <span className="font-light">106-0032 東京都港区六本木3丁目16-12 六本木KSビル5階</span>
               </div>
-              <div className="flex items-center space-x-4">
+              {/* <div className="flex items-center space-x-4">
                 <Phone className="w-4 h-4 text-black text-opacity-90" />
                 <span className="font-light">070-8356-3107</span>
-              </div>
+              </div> */}
               <div className="flex items-center space-x-4">
                 <Mail className="w-4 h-4 text-black text-opacity-90" />
                 <span className="font-light">info@lmns.jp</span>

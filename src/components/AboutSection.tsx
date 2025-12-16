@@ -54,10 +54,10 @@ const AboutSection = () => {
     <section id="about" ref={sectionRef} className="py-32 bg-white relative">
       <div className="mx-auto">
         <div className="gap-24 items-center mb-32">
-          
+
           <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
             <div className="relative">
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1696139568097-27f204e4f81a?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="チーム"
                 className="w-full grayscale hover:grayscale-0 transition-all duration-700"
@@ -87,10 +87,10 @@ const AboutSection = () => {
               そして、ユーモアと挑戦心をもって、社会に問いを投げかける存在でありたいと考えています。
             </p>
           </div>
-          
+
           <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
             <div className="relative">
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1692432248156-91e5c8cd84d7?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="チーム"
                 className="w-full grayscale-0 hover:grayscale-0 transition-all duration-700"
@@ -100,7 +100,7 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-      
+
     </section>
   );
 };

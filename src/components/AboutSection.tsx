@@ -1,5 +1,4 @@
 
-import { Users, Target, Award, Lightbulb } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 const AboutSection = () => {
@@ -13,7 +12,7 @@ const AboutSection = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -27,80 +26,91 @@ const AboutSection = () => {
     };
   }, []);
 
-  const values = [
-    {
-      icon: <Target className="w-6 h-6 text-copper" />,
-      title: "Philosophy",
-      description: "技術と人間性の調和を追求し、真に価値あるソリューションを創造"
-    },
-    {
-      icon: <Lightbulb className="w-6 h-6 text-copper" />,
-      title: "Innovation",
-      description: "最新技術への深い洞察と継続的な学習による革新的アプローチ"
-    },
-    {
-      icon: <Award className="w-6 h-6 text-copper" />,
-      title: "Quality",
-      description: "妥協のない品質基準と細部への配慮による信頼性の高い製品"
-    },
-    {
-      icon: <Users className="w-6 h-6 text-copper" />,
-      title: "Partnership",
-      description: "お客様との長期的なパートナーシップを通じた持続的成長"
-    }
-  ];
-
   return (
-    <section id="about" ref={sectionRef} className="py-32 bg-white relative">
-      <div className="mx-auto">
-        <div className="gap-24 items-center mb-32">
-
-          <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1696139568097-27f204e4f81a?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="チーム"
-                className="w-full grayscale hover:grayscale-0 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-indigo-900/10 hover:bg-transparent transition-all duration-700"></div>
-            </div>
+    <section id="about" ref={sectionRef} className="py-32 bg-background relative">
+      {/* ヒーロー画像セクション */}
+      <div className="mb-32">
+        <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="relative h-[60vh] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1695997956965-aed69fb1cc7c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="ビジョン"
+              className="w-full h-full object-cover opacity-90"
+            />
+            <div className="absolute inset-0 bg-foreground/5"></div>
           </div>
         </div>
       </div>
 
-      <div className="mx-auto px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32">
-          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-            <h2 className="text-4xl sm:text-5xl font-light text-slate-900 mb-8 tracking-tight leading-tight">
-              Concept
-            </h2>
-            <div className="w-24 h-px bg-copper mb-8"></div>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8 font-light">
+      {/* コンテンツセクション */}
+      <div className="mx-auto px-8 lg:px-16 max-w-7xl">
+        {/* コンセプトセクション */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 mb-32">
+          <div className={`lg:col-span-5 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+            <div className="sticky top-32">
+              <h2 className="text-3xl sm:text-4xl font-light text-foreground mb-6 tracking-tight">
+                Concept
+              </h2>
+              <div className="w-12 h-px bg-foreground mb-8"></div>
+              <p className="text-sm font-light text-muted-foreground tracking-wider uppercase">
+                Philosophy & Approach
+              </p>
+            </div>
+          </div>
+
+          <div className={`lg:col-span-7 space-y-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
+            <p className="text-base md:text-lg text-foreground leading-relaxed font-light">
               ルミナ合同会社は、企業が「本当に目指したい姿」を見つけ出し、それを実現するためのブランドコンサルティングに加え、WebデザインとWebアプリ開発の分野でも企業の本質を引き出し、成長を支援します。
+            </p>
+            <p className="text-base md:text-lg text-foreground leading-relaxed font-light">
               私たちは、デザインや広告の枠を超え、哲学や人類学、経営学といった深い知識を重視します。
               これに加え、ユーザー体験（UX）やインターフェース設計（UI）、フロントエンドからバックエンドまでの技術開発を融合させ、単なる見た目の美しさや操作性を超えた、企業の核となる価値をデジタル空間に表現します。
-              ロゴや空間デザイン、Webサイト、Webアプリ、映像、広報など、ブランドを形作る多様な専門家とエンジニアがチームを組み、表層的なデザインではなく、企業の本質と価値を社会に届けます。
             </p>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8 font-light">
+            <p className="text-base md:text-lg text-foreground leading-relaxed font-light">
               私たちの特徴は、合理性だけではなく感性や美意識、そしてデジタル技術を駆使して、矛盾を超えて新たな価値を生み出すことです。
-              テクノロジーとクリエイティビティを掛け合わせることで、見る人、使う人の心を動かし、企業と顧客の絆をより深く、より広く繋ぎます。 
-              そして、ユーモアと挑戦心をもって、社会に問いを投げかける存在でありたいと考えています。
+              テクノロジーとクリエイティビティを掛け合わせることで、見る人、使う人の心を動かし、企業と顧客の絆をより深く、より広く繋ぎます。
             </p>
-          </div>
-
-          <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1692432248156-91e5c8cd84d7?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="チーム"
-                className="w-full grayscale-0 hover:grayscale-0 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-indigo-900/10 hover:bg-transparent transition-all duration-700"></div>
-            </div>
           </div>
         </div>
-      </div>
 
+        {/* 画像セクション */}
+        <div className={`mb-32 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="relative h-[50vh] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1692432248156-91e5c8cd84d7?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="ワークスペース"
+              className="w-full h-full object-cover opacity-90"
+            />
+            <div className="absolute inset-0 bg-foreground/5"></div>
+          </div>
+        </div>
+
+        {/* バリューセクション - ミニマルなグリッド */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {[
+            { title: "Philosophy", description: "技術と人間性の調和" },
+            { title: "Innovation", description: "継続的な革新と探求" },
+            { title: "Quality", description: "妥協のない品質基準" },
+            { title: "Partnership", description: "長期的な信頼関係" }
+          ].map((value, index) => (
+            <div
+              key={value.title}
+              className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${500 + index * 100}ms` }}
+            >
+              <div className="space-y-4">
+                <h3 className="text-sm font-light text-foreground tracking-wider uppercase">
+                  {value.title}
+                </h3>
+                <div className="w-8 h-px bg-foreground/30"></div>
+                <p className="text-sm font-light text-muted-foreground leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

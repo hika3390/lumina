@@ -117,6 +117,79 @@ export default {
 					'50%': {
 						opacity: '1'
 					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-20px)'
+					}
+				},
+				'rotate-slow': {
+					'0%': {
+						transform: 'rotate(0deg)'
+					},
+					'100%': {
+						transform: 'rotate(360deg)'
+					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						opacity: '0.3',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '0.8',
+						transform: 'scale(1.1)'
+					}
+				},
+				'heartbeat': {
+					'0%, 100%': {
+						transform: 'scale(1)'
+					},
+					'10%': {
+						transform: 'scale(1.05)'
+					},
+					'20%': {
+						transform: 'scale(1)'
+					},
+					'30%': {
+						transform: 'scale(1.08)'
+					},
+					'40%': {
+						transform: 'scale(1)'
+					}
+				},
+				'heartbeat-glow': {
+					'0%, 100%': {
+						opacity: '0.2',
+						transform: 'scale(1)'
+					},
+					'10%': {
+						opacity: '0.5',
+						transform: 'scale(1.15)'
+					},
+					'20%': {
+						opacity: '0.2',
+						transform: 'scale(1)'
+					},
+					'30%': {
+						opacity: '0.7',
+						transform: 'scale(1.2)'
+					},
+					'40%': {
+						opacity: '0.2',
+						transform: 'scale(1)'
+					}
+				},
+				'shimmer': {
+					'0%': {
+						backgroundPosition: '-200% 0'
+					},
+					'100%': {
+						backgroundPosition: '200% 0'
+					}
 				}
 			},
 			animation: {
@@ -124,7 +197,13 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in-left': 'slide-in-left 0.6s ease-out',
-				'gentle-glow': 'gentle-glow 3s ease-in-out infinite'
+				'gentle-glow': 'gentle-glow 3s ease-in-out infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'rotate-slow': 'rotate-slow 20s linear infinite',
+				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+				'shimmer': 'shimmer 3s linear infinite',
+				'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
+				'heartbeat-glow': 'heartbeat-glow 1.5s ease-in-out infinite'
 			}
 		}
 	},

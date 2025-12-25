@@ -183,12 +183,102 @@ export default {
 						transform: 'scale(1)'
 					}
 				},
+				'heartbeat-intense': {
+					'0%, 100%': {
+						transform: 'scale(1)'
+					},
+					'10%': {
+						transform: 'scale(1.1)'
+					},
+					'20%': {
+						transform: 'scale(1)'
+					},
+					'30%': {
+						transform: 'scale(1.15)'
+					},
+					'40%': {
+						transform: 'scale(1)'
+					}
+				},
+				'glow-intense': {
+					'0%, 100%': {
+						opacity: '0.4',
+						transform: 'scale(1)'
+					},
+					'10%': {
+						opacity: '0.8',
+						transform: 'scale(1.25)'
+					},
+					'20%': {
+						opacity: '0.4',
+						transform: 'scale(1)'
+					},
+					'30%': {
+						opacity: '1',
+						transform: 'scale(1.3)'
+					},
+					'40%': {
+						opacity: '0.4',
+						transform: 'scale(1)'
+					}
+				},
 				'shimmer': {
 					'0%': {
 						backgroundPosition: '-200% 0'
 					},
 					'100%': {
 						backgroundPosition: '200% 0'
+					}
+				},
+				'pulse-ring': {
+					'0%, 100%': {
+						opacity: '0'
+					},
+					'10%': {
+						opacity: '1'
+					},
+					'20%': {
+						opacity: '0'
+					},
+					'30%': {
+						opacity: '1'
+					},
+					'40%': {
+						opacity: '0'
+					}
+				},
+				'electric-flash': {
+					'0%, 100%': {
+						opacity: '0',
+						transform: 'scale(0.8) rotate(0deg)'
+					},
+					'25%': {
+						opacity: '1',
+						transform: 'scale(1) rotate(90deg)'
+					},
+					'50%': {
+						opacity: '0',
+						transform: 'scale(0.8) rotate(180deg)'
+					},
+					'75%': {
+						opacity: '1',
+						transform: 'scale(1) rotate(270deg)'
+					}
+				},
+				'particle-float': {
+					'0%, 100%': {
+						transform: 'translateY(0) translateX(0) scale(1)',
+						opacity: '0'
+					},
+					'25%': {
+						opacity: '1'
+					},
+					'50%': {
+						transform: 'translateY(-30px) translateX(15px) scale(0.5)',
+						opacity: '0.5'
+					},
+					'75%': {
+						opacity: '0.3'
 					}
 				}
 			},
@@ -203,7 +293,12 @@ export default {
 				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
 				'shimmer': 'shimmer 3s linear infinite',
 				'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
-				'heartbeat-glow': 'heartbeat-glow 1.5s ease-in-out infinite'
+				'heartbeat-glow': 'heartbeat-glow 1.5s ease-in-out infinite',
+				'heartbeat-intense': 'heartbeat-intense 1s ease-in-out infinite',
+				'glow-intense': 'glow-intense 1s ease-in-out infinite',
+				'pulse-ring': 'pulse-ring 1s ease-in-out infinite',
+				'electric-flash': 'electric-flash 2s ease-in-out infinite',
+				'particle-float': 'particle-float 3s ease-out infinite'
 			}
 		}
 	},

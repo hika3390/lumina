@@ -61,34 +61,62 @@ const HeroSection = () => {
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {/* ロゴを大きく表示 */}
           <div className="space-y-12">
-            <div className="flex justify-center relative group">
-              {/* 背景のグロー効果 - 心臓の鼓動のようなアニメーション */}
-              <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-foreground/20 via-foreground/10 to-foreground/20 opacity-0 group-hover:opacity-100 group-hover:animate-heartbeat-glow transition-opacity duration-700"></div>
-              <div className="absolute inset-0 blur-2xl bg-gradient-to-br from-foreground/15 via-transparent to-foreground/15 opacity-0 group-hover:opacity-100 group-hover:animate-heartbeat-glow transition-opacity duration-700" style={{ animationDelay: '0.1s' }}></div>
+            <div className="flex justify-center">
+              <div className="relative group inline-block">
+                {/* 背景のグロー効果 - 心臓の鼓動のようなアニメーション */}
+                <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-foreground/20 via-foreground/10 to-foreground/20 group-hover:animate-heartbeat-glow"></div>
+                <div className="absolute inset-0 blur-2xl bg-gradient-to-br from-foreground/15 via-transparent to-foreground/15 group-hover:animate-heartbeat-glow" style={{ animationDelay: '0.1s' }}></div>
 
-              {/* ロゴ本体 - 心臓の鼓動 */}
-              <div className="relative">
-                <img
-                  src="/LUMINA LOGO.png"
-                  alt="LUMINA LLC"
-                  className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain
-                  transition-all duration-300 ease-out
-                  group-hover:drop-shadow-2xl
-                  group-hover:animate-heartbeat
-                  cursor-pointer"
-                />
+                {/* ロゴ本体 - 心臓の鼓動 */}
+                <div className="relative">
+                  <img
+                    src="/LUMINA LOGO.png"
+                    alt="LUMINA LLC"
+                    className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain
+                    drop-shadow-2xl
+                    animate-heartbeat
+                    group-hover:animate-heartbeat-intense
+                    cursor-pointer"
+                  />
 
-                {/* ホバー時の輝きエフェクト */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+                  {/* 輝きエフェクト */}
+                  <div className="absolute inset-0 opacity-30 group-hover:opacity-60 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+                  </div>
                 </div>
-              </div>
 
-              {/* 周囲の波紋エフェクト - 心臓の鼓動のような広がり */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-foreground/10 rounded-full animate-heartbeat-glow"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-foreground/15 rounded-full animate-heartbeat-glow" style={{ animationDelay: '0.15s' }}></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[105%] h-[105%] border border-foreground/20 rounded-full animate-heartbeat-glow" style={{ animationDelay: '0.3s' }}></div>
+                {/* 静電気と粒子エフェクト */}
+                <div className="absolute inset-0">
+                  {/* 静電気エフェクト - ロゴ周辺の小さな光の点 */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {/* 上部の電気 */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-foreground/80 rounded-full animate-electric-flash blur-sm"></div>
+                    {/* 右上の電気 */}
+                    <div className="absolute top-[15%] right-[15%] w-1.5 h-1.5 bg-foreground/60 rounded-full animate-electric-flash blur-sm" style={{ animationDelay: '0.3s' }}></div>
+                    {/* 右の電気 */}
+                    <div className="absolute top-1/2 right-0 -translate-y-1/2 w-2 h-2 bg-foreground/70 rounded-full animate-electric-flash blur-sm" style={{ animationDelay: '0.5s' }}></div>
+                    {/* 右下の電気 */}
+                    <div className="absolute bottom-[15%] right-[15%] w-1.5 h-1.5 bg-foreground/80 rounded-full animate-electric-flash blur-sm" style={{ animationDelay: '0.7s' }}></div>
+                    {/* 下部の電気 */}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-foreground/60 rounded-full animate-electric-flash blur-sm" style={{ animationDelay: '0.2s' }}></div>
+                    {/* 左下の電気 */}
+                    <div className="absolute bottom-[15%] left-[15%] w-1.5 h-1.5 bg-foreground/70 rounded-full animate-electric-flash blur-sm" style={{ animationDelay: '0.4s' }}></div>
+                    {/* 左の電気 */}
+                    <div className="absolute top-1/2 left-0 -translate-y-1/2 w-2 h-2 bg-foreground/80 rounded-full animate-electric-flash blur-sm" style={{ animationDelay: '0.6s' }}></div>
+                    {/* 左上の電気 */}
+                    <div className="absolute top-[15%] left-[15%] w-1.5 h-1.5 bg-foreground/60 rounded-full animate-electric-flash blur-sm" style={{ animationDelay: '0.1s' }}></div>
+                  </div>
+
+                  {/* 浮遊する粒子エフェクト */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute top-[20%] left-[30%] w-3 h-3 bg-foreground/60 rounded-full animate-particle-float blur-[1px]"></div>
+                    <div className="absolute top-[60%] right-[25%] w-2.5 h-2.5 bg-foreground/70 rounded-full animate-particle-float blur-[1px]" style={{ animationDelay: '0.5s' }}></div>
+                    <div className="absolute bottom-[30%] left-[40%] w-3 h-3 bg-foreground/60 rounded-full animate-particle-float blur-[1px]" style={{ animationDelay: '1s' }}></div>
+                    <div className="absolute top-[40%] right-[35%] w-2.5 h-2.5 bg-foreground/70 rounded-full animate-particle-float blur-[1px]" style={{ animationDelay: '1.5s' }}></div>
+                    <div className="absolute top-[70%] left-[20%] w-3 h-3 bg-foreground/60 rounded-full animate-particle-float blur-[1px]" style={{ animationDelay: '2s' }}></div>
+                    <div className="absolute bottom-[40%] right-[30%] w-2.5 h-2.5 bg-foreground/70 rounded-full animate-particle-float blur-[1px]" style={{ animationDelay: '2.5s' }}></div>
+                  </div>
+                </div>
               </div>
             </div>
 

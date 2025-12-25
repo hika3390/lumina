@@ -106,7 +106,7 @@ const HeroSection = () => {
       </div>
 
       {/* スクロール指示 */}
-      <div className="relative z-10 flex justify-center pb-8">
+      <div className="relative z-10 flex justify-center pb-1">
         <div className="flex flex-col items-center space-y-2">
           <span className="text-xs font-light text-muted-foreground tracking-widest">SCROLL</span>
           <div className="w-px h-12 bg-gradient-to-b from-foreground to-transparent opacity-30"></div>

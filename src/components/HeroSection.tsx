@@ -51,13 +51,13 @@ const HeroSection = () => {
   }, [typingIndex, fullQuote]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative bg-background overflow-hidden pt-24">
+    <section id="home" className="min-h-screen flex flex-col justify-between relative bg-background overflow-hidden pt-24 pb-8">
       {/* Minimal background - very subtle */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-foreground rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 text-center px-8 lg:px-16 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-8 lg:px-16 max-w-5xl mx-auto flex-grow flex items-center justify-center">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {/* ロゴを大きく表示 */}
           <div className="space-y-12">
@@ -106,7 +106,7 @@ const HeroSection = () => {
       </div>
 
       {/* スクロール指示 */}
-      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2">
+      <div className="relative z-10 flex justify-center pb-8">
         <div className="flex flex-col items-center space-y-2">
           <span className="text-xs font-light text-muted-foreground tracking-widest">SCROLL</span>
           <div className="w-px h-12 bg-gradient-to-b from-foreground to-transparent opacity-30"></div>

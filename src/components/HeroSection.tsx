@@ -75,7 +75,6 @@ const HeroSection = () => {
                     className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain
                     drop-shadow-2xl
                     animate-heartbeat
-                    group-hover:animate-heartbeat-intense
                     cursor-pointer"
                   />
 

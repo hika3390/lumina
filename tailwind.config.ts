@@ -183,45 +183,6 @@ export default {
 						transform: 'scale(1)'
 					}
 				},
-				'heartbeat-intense': {
-					'0%, 100%': {
-						transform: 'scale(1)'
-					},
-					'10%': {
-						transform: 'scale(1.1)'
-					},
-					'20%': {
-						transform: 'scale(1)'
-					},
-					'30%': {
-						transform: 'scale(1.15)'
-					},
-					'40%': {
-						transform: 'scale(1)'
-					}
-				},
-				'glow-intense': {
-					'0%, 100%': {
-						opacity: '0.4',
-						transform: 'scale(1)'
-					},
-					'10%': {
-						opacity: '0.8',
-						transform: 'scale(1.25)'
-					},
-					'20%': {
-						opacity: '0.4',
-						transform: 'scale(1)'
-					},
-					'30%': {
-						opacity: '1',
-						transform: 'scale(1.3)'
-					},
-					'40%': {
-						opacity: '0.4',
-						transform: 'scale(1)'
-					}
-				},
 				'shimmer': {
 					'0%': {
 						backgroundPosition: '-200% 0'
@@ -294,8 +255,6 @@ export default {
 				'shimmer': 'shimmer 3s linear infinite',
 				'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
 				'heartbeat-glow': 'heartbeat-glow 1.5s ease-in-out infinite',
-				'heartbeat-intense': 'heartbeat-intense 1s ease-in-out infinite',
-				'glow-intense': 'glow-intense 1s ease-in-out infinite',
 				'pulse-ring': 'pulse-ring 1s ease-in-out infinite',
 				'electric-flash': 'electric-flash 2s ease-in-out infinite',
 				'particle-float': 'particle-float 3s ease-out infinite'

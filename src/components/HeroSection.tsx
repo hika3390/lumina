@@ -53,10 +53,10 @@ const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen flex flex-col justify-between relative bg-background overflow-hidden pt-24 pb-8">
       {/* ドットパターン背景 - 端部分からグラデーション + 余白 */}
-      <div className="absolute inset-x-8 inset-y-12 md:inset-x-16 md:inset-y-16 lg:inset-x-24 lg:inset-y-20 bg-dot-pattern opacity-60" style={{
+      {/* <div className="absolute inset-x-8 inset-y-12 md:inset-x-16 md:inset-y-16 lg:inset-x-24 lg:inset-y-20 bg-dot-pattern opacity-60" style={{
         maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 100%)',
         WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 100%)'
-      }}></div>
+      }}></div> */}
 
       {/* Minimal background - very subtle */}
       <div className="absolute inset-0 opacity-[0.02]">

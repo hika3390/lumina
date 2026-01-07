@@ -74,7 +74,7 @@ const AboutSection = () => {
         </div>
 
         {/* 画像セクション */}
-        <div className={`mb-32 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="relative h-[50vh] overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1692432248156-91e5c8cd84d7?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -83,32 +83,6 @@ const AboutSection = () => {
             />
             <div className="absolute inset-0 bg-foreground/5"></div>
           </div>
-        </div>
-
-        {/* バリューセクション - ミニマルなグリッド */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {[
-            { title: "Philosophy", description: "技術と人間性の調和" },
-            { title: "Innovation", description: "継続的な革新と探求" },
-            { title: "Quality", description: "妥協のない品質基準" },
-            { title: "Partnership", description: "長期的な信頼関係" }
-          ].map((value, index) => (
-            <div
-              key={value.title}
-              className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: `${500 + index * 100}ms` }}
-            >
-              <div className="space-y-4">
-                <h3 className="text-sm font-light text-foreground tracking-wider uppercase">
-                  {value.title}
-                </h3>
-                <div className="w-8 h-px bg-foreground/30"></div>
-                <p className="text-sm font-light text-muted-foreground leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

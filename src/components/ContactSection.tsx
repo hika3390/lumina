@@ -4,6 +4,7 @@ import { toast } from '@/components/ui/sonner';
 const ContactSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -48,6 +49,8 @@ const ContactSection = () => {
       return;
     }
 
+    setIsSubmitting(true);
+
     try {
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
@@ -71,6 +74,8 @@ const ContactSection = () => {
         description: 'しばらく時間をおいて再度お試しください。',
         duration: 4000,
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -151,9 +156,13 @@ const ContactSection = () => {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="px-12 py-4 border border-background text-background font-light text-sm tracking-widest uppercase hover:bg-background hover:text-foreground transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="px-12 py-4 border border-background text-background font-light text-sm tracking-widest uppercase hover:bg-background hover:text-foreground transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                 >
-                  送信
+                  {isSubmitting && (
+                    <div className="w-4 h-4 border-2 border-background border-t-transparent rounded-full animate-spin"></div>
+                  )}
+                  {isSubmitting ? '送信中...' : '送信'}
                 </button>
               </div>
             </form>

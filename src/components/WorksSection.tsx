@@ -61,11 +61,11 @@ const WorksSection = () => {
           <div className={`lg:col-span-7 space-y-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
             {works.map((work, index) => (
               <div key={index} className="space-y-4">
-                <h3 className="text-sm font-light text-foreground tracking-wider uppercase">
+                <h3 className="text-xs font-light text-muted-foreground tracking-wider uppercase">
                   {work.title}
                 </h3>
                 <div className="w-8 h-px bg-foreground/30"></div>
-                <p className="text-base md:text-lg text-foreground leading-relaxed font-light">
+                <p className="text-sm md:text-base text-foreground leading-relaxed font-normal">
                   {work.description}
                 </p>
               </div>

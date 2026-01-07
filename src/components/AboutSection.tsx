@@ -59,14 +59,14 @@ const AboutSection = () => {
           </div>
 
           <div className={`lg:col-span-7 space-y-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-            <p className="text-base md:text-lg text-foreground leading-relaxed font-light">
+            <p className="text-sm md:text-base text-foreground leading-relaxed font-normal">
               ルミナ合同会社は、企業が「本当に目指したい姿」を見つけ出し、それを実現するためのブランドコンサルティングに加え、WebデザインとWebアプリ開発の分野でも企業の本質を引き出し、成長を支援します。
             </p>
-            <p className="text-base md:text-lg text-foreground leading-relaxed font-light">
+            <p className="text-sm md:text-base text-foreground leading-relaxed font-normal">
               私たちは、デザインや広告の枠を超え、哲学や人類学、経営学といった深い知識を重視します。
               これに加え、ユーザー体験（UX）やインターフェース設計（UI）、フロントエンドからバックエンドまでの技術開発を融合させ、単なる見た目の美しさや操作性を超えた、企業の核となる価値をデジタル空間に表現します。
             </p>
-            <p className="text-base md:text-lg text-foreground leading-relaxed font-light">
+            <p className="text-sm md:text-base text-foreground leading-relaxed font-normal">
               私たちの特徴は、合理性だけではなく感性や美意識、そしてデジタル技術を駆使して、矛盾を超えて新たな価値を生み出すことです。
               テクノロジーとクリエイティビティを掛け合わせることで、見る人、使う人の心を動かし、企業と顧客の絆をより深く、より広く繋ぎます。
             </p>

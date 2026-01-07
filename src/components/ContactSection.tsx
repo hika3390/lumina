@@ -26,14 +26,52 @@ const ContactSection = () => {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success('お問い合わせを受け付けました', {
-      description: '担当者より1〜2営業日以内にご連絡いたします。',
-      duration: 4000,
-    });
-    // フォームをリセット
-    (e.target as HTMLFormElement).reset();
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      company: formData.get('company') as string,
+      message: formData.get('message') as string,
+    };
+
+    // Google Apps ScriptのウェブアプリURLを設定してください
+    const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL || '';
+
+    if (!GOOGLE_SCRIPT_URL) {
+      toast.error('送信エラー', {
+        description: 'スプレッドシート連携が設定されていません。',
+        duration: 4000,
+      });
+      return;
+    }
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      toast.success('お問い合わせを受け付けました', {
+        description: '担当者より1〜2営業日以内にご連絡いたします。',
+        duration: 4000,
+      });
+
+      // フォームをリセット
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      console.error('送信エラー:', error);
+      toast.error('送信に失敗しました', {
+        description: 'しばらく時間をおいて再度お試しください。',
+        duration: 4000,
+      });
+    }
   };
 
   return (
@@ -57,12 +95,13 @@ const ContactSection = () => {
             <form className="space-y-8" onSubmit={handleSubmit}>
               <div className="space-y-3">
                 <label htmlFor="name" className="block text-sm font-light text-background/60 tracking-wider uppercase">
-                  お名前
+                  お名前 <span className="text-background">*</span>
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
+                  required
                   className="w-full px-0 py-3 border-0 border-b border-background/30 bg-transparent text-background font-light focus:outline-none focus:border-background transition-colors placeholder:text-background/30"
                   placeholder="山田 太郎"
                 />
@@ -70,12 +109,13 @@ const ContactSection = () => {
 
               <div className="space-y-3">
                 <label htmlFor="email" className="block text-sm font-light text-background/60 tracking-wider uppercase">
-                  メールアドレス
+                  メールアドレス <span className="text-background">*</span>
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
+                  required
                   className="w-full px-0 py-3 border-0 border-b border-background/30 bg-transparent text-background font-light focus:outline-none focus:border-background transition-colors placeholder:text-background/30"
                   placeholder="example@lmns.jp"
                 />
@@ -96,12 +136,13 @@ const ContactSection = () => {
 
               <div className="space-y-3">
                 <label htmlFor="message" className="block text-sm font-light text-background/60 tracking-wider uppercase">
-                  お問い合わせ内容
+                  お問い合わせ内容 <span className="text-background">*</span>
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
+                  required
                   className="w-full px-0 py-3 border-0 border-b border-background/30 bg-transparent text-background font-light focus:outline-none focus:border-background transition-colors resize-none placeholder:text-background/30"
                   placeholder="ご依頼、ご要望をお聞かせください"
                 />

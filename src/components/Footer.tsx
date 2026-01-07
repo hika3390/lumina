@@ -53,7 +53,7 @@ const Footer = () => {
 
         <div className="border-t border-border pt-8">
           <p className="text-xs font-light text-center text-muted-foreground tracking-wider">
-            &copy; 2025 LUMINA LLC. All rights reserved.
+            &copy; 2026 LUMINA LLC. All rights reserved.
           </p>
         </div>
       </div>

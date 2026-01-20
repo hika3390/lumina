@@ -35,18 +35,6 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-
-              <div>
-                <h4 className="text-xs font-light mb-6 text-foreground tracking-widest uppercase">
-                  Contact
-                </h4>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-4 h-4 text-muted-foreground" />
-                    <span className="text-sm font-light text-muted-foreground">info@lmns.jp</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
